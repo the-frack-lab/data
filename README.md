@@ -1,8 +1,10 @@
 #Overview#
 
-This is a repository for data used in reporting on [The Frack Lab](http://beaconreader.com/projects/the-frack-lab).
+This is the data repository for [The Frack Lab](http://beaconreader.com/projects/the-frack-lab), a reporting project by Mason Inman.
 
-The focus is on data about oil and natural gas, primarily from public sources such as U.S. state governments and the U.S. federal government.
+The US “shale revolution” has taken off in recent years. But journalists are largely avoiding one crucial, tough question: How long will the boom last? By delving into the data on oil and natural gas, The Frack Lab aims to give a better idea of where the shale boom is heading.
+
+The data primarily comes from public sources such as U.S. state governments and the U.S. federal government. Some of it has been published elsewhere, and some data has not been published elsewhere before.
 
 
 ##List of files##

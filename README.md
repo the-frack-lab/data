@@ -13,7 +13,7 @@ The data primarily comes from public sources such as U.S. state governments and 
 * [Long-term U.S. natural gas production by source](https://github.com/the-frack-lab/data/blob/master/natural-gas/US-long-term/data.csv) (1900-2013)
 
 *Forecasts:*
-* [EIA AEO 2014 tight oil by play](https://github.com/the-frack-lab/data/blob/master/oil/EIA/AEO_2014_tight_oil.csv) (2000-2040)
+* [EIA AEO 2014 tight oil by play](https://github.com/the-frack-lab/data/blob/master/oil/EIA/AEO_2014_tight_oil_by_play_forecast.csv) (2000-2040)
 
 **Glossary:**
 * **AEO:** Annual Energy Outlook (EIA's annual report on U.S. energy)

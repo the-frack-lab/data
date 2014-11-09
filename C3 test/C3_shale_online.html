@@ -12,24 +12,19 @@
 <div id="chart"></div>
 <script type="text/javascript">
 var chart = c3.generate({
-    bindto: '#chart',
+    //bindto: '#chart',
 	data: {
 		x: 'year',
 		url: 'https://raw.githubusercontent.com/the-frack-lab/data/master/oil/EIA/AEO_2014_tight_oil_by_play_forecast.csv',
-		type: 'area',
-		groups: [['Bakken (mbpd)', 'Eagle Ford (mbpd)', 'Woodford (mbpd)', 'Austin Chalk (mbpd)', 'Spraberry (mbpd)', 'Niobrara (mbpd)', 'Avalon/Bone Springs (mbpd)', 'Monterey (mbpd)', 'Wolfcamp (mbpd)', 'Other (mbpd)']]
+		type: 'line',
 		},
-		// order: 'desc',
-    // zoom: {enabled: true},
-    legend: {position: 'right'},
     tooltip: {
  		show: true,
- 		grouped: false,
+ 		// grouped: false,
     	},
-    point: {
-    	show: false,
-    //	size: 15,
-    	},
+    // zoom: {enabled: true},
+    legend: {position: 'right'},
+    point: {show: false},
     axis: {
         x: {
         	padding: {left: 0, right: 0},
@@ -40,7 +35,7 @@ var chart = c3.generate({
         	}
         },
         y: {
-        	padding: {top: 0.1, bottom: 0},
+        	padding: {top:0.5, bottom:0},
             label: 
             {text: 'million barrels per day',
             position: 'outer-middle',
@@ -52,13 +47,10 @@ var chart = c3.generate({
 
 // Rather than stating all the series to include
 // Can exclude only particular parts of the data set
-// This has to be separate, after the chart generate is closed 
-// I thought it was working before without being inside setTimeout; now only working inside that
-setTimeout(function () {
-	chart.unload({
-	ids: ['Total (mbpd)']
-	});
-}, 100);
+// This has to be separate, after the 
+//   	chart.unload({
+//	ids: ['Total (mbpd)', 'Monterey (mbpd)'],
+//	});
 </script>
 
 

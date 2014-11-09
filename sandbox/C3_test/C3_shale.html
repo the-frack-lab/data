@@ -12,11 +12,11 @@
 <div id="chart"></div>
 <script type="text/javascript">
 var chart = c3.generate({
-    //bindto: '#chart',
+    bindto: '#chart',
 	data: {
 		x: 'year',
-		//url: 'data/AEO_2014_tight_oil_by_play_forecast.csv',
-        url: 'https://raw.githubusercontent.com/the-frack-lab/data/master/oil/EIA/AEO_2014_tight_oil_by_play_forecast.csv',
+		//url: '/oil/EIA/AEO_2014_tight_oil_by_play_forecast.csv', // FOR LOCAL TESTING
+        url: 'https://the-frack-lab.github.io/data/oil/EIA/AEO_2014_tight_oil_by_play_forecast.csv',
 		type: 'line',
 		},
     tooltip: {
@@ -45,8 +45,6 @@ var chart = c3.generate({
         },
     },
 });
-<<<<<<< HEAD
-=======
 
 // Rather than stating all the series to include
 // Can exclude only particular parts of the data set
@@ -58,6 +56,5 @@ var chart = c3.generate({
 // load into Beacon with this URL: 
 // <iframe width='100%' height='500px' frameBorder='0' src='https://the-frack-lab.github.io/data/C3%20test/C3_shale.html'></iframe>
 
->>>>>>> FETCH_HEAD
 </script>
 </body>

@@ -73,7 +73,7 @@ var chart = c3.generate({
 // Rather than stating all the series to include
 // Can exclude only particular parts of the data set
 // This has to be separate, after the chart generate is closed 
-// I thought it was working before without being inside setTimeout; now only working inside that
+// I thought it was working before without being inside setTimeout; now only working outside that
 setTimeout(function () {
 	chart.unload({
 	ids: ['Total (mbpd)']

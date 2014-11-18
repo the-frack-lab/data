@@ -39,27 +39,59 @@ var chart = c3.generate({
 
 var chart = c3.generate({
     data: {
-        x: 'date_C3_madeup',
-        xFormat: '%m-%d-%Y', // 'xFormat' can be used as custom format of 'x'
+        x: 'year',
+        xs: {
+            'historical (EIA)': 'x1',
+            'Citi 2014-11': 'x2',
+        },
+        columns: [
+            ['x1', 2000, 2001, 2002, 2003, 2004, 2005],
+            ['x2', 2013, 2014, 2015, 2016, 2017, 2018],
+        ],
+
+
+
+//        xFormat: '%m-%d-%Y', // 'xFormat' can be used as custom format of 'x'
 //        url: '/Users/mason/Github/data/sandbox/C3_test/AEO_2014_tight_oil_by_play_forecast_timeseries.csv',
 //        url: 'AEO_2014_tight_oil_by_play_forecast_timeseries.csv',
-		url: 'Bakken_misc_forecasts_2014-11_(mbpd)_TEST2.csv',
+		url: 'Bakken_misc_forecasts_(mbpd)_v2.csv',
 //        columns: [
 //            ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
 //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
 //            ['data1', 30, 200, 100, 400, 150, 250],
 //            ['data2', 130, 340, 200, 500, 250, 350]
 //        ]
+        /*
+        regions: {
+            'historical (EIA)': [{'start':2013, 'style':'dashed'}],
+            'Citi 2014-11': [{'start':2000, 'end':2013, 'style':'dashed'}, {'start':2020}],
+            'Lukoil 2013': [{'start':2000, 'end':2013, 'style':'dashed'}, {'start':2025}],
+            'Rystad 2014-05': [{'start':2000, 'end':2013, 'style':'dashed'}, {'start':2025}],
+            'EPRINC 2014-05': [{'start':2000, 'end':2013, 'style':'dashed'}, {'start':2020}],
+            'Hughes 2013 (2000 wells/year)': [{'start':2000, 'end':2013, 'style':'dashed'}, {'start':2025}],
+            'Hughes 2014 (most likely)': [{'start':2000, 'end':2013, 'style':'dashed'}],
+            'ND DMR 2014-06 P50 [probable]': [{'start':2000, 'end':2013, 'style':'dashed'}],
+            'ND DMR 2014-06 P90 [possible]': [{'start':2000, 'end':2013, 'style':'dashed'}],
+            'EIA AEO 2013 [ref case]': [{'start':2000, 'end':2013, 'style':'dashed'}],
+            'EIA AEO 2014 [ref case]': [{'start':2000, 'end':2013, 'style':'dashed'}],
+            'style':''
+        },
+        */
     },
+    line: {connectNull: false},
     legend: {position: 'right'},
     point: {show: false},
+    tooltip: {
+        show: true,
+        //grouped: false,
+        },
     axis: {
         x: {
-        	type: 'timeseries',
-        	tick: {
-                format: '%Y-%m-%d',
-                count: 12,
-            },
+//        	type: 'timeseries',
+//        	tick: {
+//                format: '%Y-%m-%d',
+//                count: 12,
+//            },
         	padding: 
         		{
         		left: 0, 
@@ -146,10 +178,15 @@ var chart = c3.generate({
 
 // Rather than stating all the series to include
 // Can exclude only particular parts of the data set
-// This has to be separate, after the 
-//   	chart.unload({
-//	ids: ['Total (mbpd)', 'Monterey (mbpd)'],
-//	});
+// This has to be separate, after the chart generate is closed 
+// I thought it was working before without being inside setTimeout; now only working outside that
+/*
+setTimeout(function () {
+    chart.unload({
+    ids: ['Lukoil 2013']
+    });
+}, 1000);
+*/
 </script>
 
 

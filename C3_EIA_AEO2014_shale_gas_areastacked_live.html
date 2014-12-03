@@ -16,7 +16,7 @@ var chart = c3.generate({
 	data: {
 		x: 'year',
 		//url: '/natural-gas/US-long-term/EIA_AEO2014_Ref_t80_ShaleGasPlays_only_CLEAN.csv',
-        url: 'http://the-frack-lab.github.io/data/natural-gas/US-long-term/EIA_AEO2014_Ref_t80_ShaleGasPlays_only_CLEAN.csv',
+        url: 'https://the-frack-lab.github.io/data/natural-gas/US-long-term/EIA_AEO2014_Ref_t80_ShaleGasPlays_only_CLEAN.csv',
 		type: 'area',
         groups: [
             ['Barnett', 'Fayetteville', 'Haynesville-Bossier', 'Marcellus', 'Eagle Ford', 'Bakken', 'Woodford', 'Antrim']
@@ -70,8 +70,8 @@ var chart = c3.generate({
 // To run locally, get local server up, then go to URL--something like:
 // http://localhost:8001/sandbox/C3_test/C3_EIA_AEO2014_shale_gas_areastacked.html
 
-// To run on interwebs, insert iFrame code like this: <iframe src='http://the-frack-lab.github.io/data/sandbox/C3_test/C3_EIA_AEO2014_shale_gas_areastacked_live.html'></iframe>
-
+// To run on interwebs, insert iFrame code like this: 
+// <iframe src='https://the-frack-lab.github.io/data/C3_EIA_AEO2014_shale_gas_areastacked_live.html'></iframe>
 // Rather than stating all the series to include
 // Can exclude only particular parts of the data set
 // This has to be separate, after the chart generate is closed 

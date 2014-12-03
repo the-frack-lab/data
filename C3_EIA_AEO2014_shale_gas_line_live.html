@@ -17,22 +17,14 @@ var chart = c3.generate({
 		x: 'year',
 		//url: '/natural-gas/US-long-term/EIA_AEO2014_Ref_t80_ShaleGasPlays_only_CLEAN.csv',
         url: 'https://the-frack-lab.github.io/data/natural-gas/US-long-term/EIA_AEO2014_Ref_t80_ShaleGasPlays_only_CLEAN_w_unnamed.csv',
-		type: 'area',
-        groups: [
-            ['Barnett', 
-            'Fayetteville', 
-            'Haynesville-Bossier', 
-            'Marcellus', 
-            'Eagle Ford', 
-            'Bakken', 
-            'Woodford', 
-            'Antrim', 
-            'unnamed']
-        ]
+		type: 'line',
+//        groups: [
+//            ['Barnett', 'Fayetteville', 'Haynesville-Bossier', 'Marcellus', 'Eagle Ford', 'Bakken', 'Woodford', 'Antrim', 'unnamed']
+//        ]
         },
     // zoom: {enabled: true},
     legend: {
-        position: 'right'
+        position: 'right',
         },
     point: {
         show: true,

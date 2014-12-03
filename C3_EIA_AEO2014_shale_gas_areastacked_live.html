@@ -1,0 +1,87 @@
+<!doctype html>
+<head>
+	<!-- Load c3.css -->
+<link href="assets/c3.css" rel="stylesheet" type="text/css">
+
+<!-- Load d3.js and c3.js -->
+<script src="assets/d3.min.js" charset="utf-8"></script>
+<script src="assets/c3.min.js"></script>
+</head>
+
+<body>
+<div id="chart"></div>
+<script type="text/javascript">
+var chart = c3.generate({
+    bindto: '#chart',
+	data: {
+		x: 'year',
+		//url: '/natural-gas/US-long-term/EIA_AEO2014_Ref_t80_ShaleGasPlays_only_CLEAN.csv',
+        url: 'http://the-frack-lab.github.io/data/natural-gas/US-long-term/EIA_AEO2014_Ref_t80_ShaleGasPlays_only_CLEAN.csv',
+		type: 'area',
+        groups: [
+            ['Barnett', 'Fayetteville', 'Haynesville-Bossier', 'Marcellus', 'Eagle Ford', 'Bakken', 'Woodford', 'Antrim']
+        ]
+        },
+    // zoom: {enabled: true},
+    legend: {
+        position: 'right'
+        },
+    point: {
+        show: true,
+        r: .5,
+        },
+    tooltip: {
+ 		show: true,
+ 		grouped: false,
+    	},
+    axis: {
+        x: {
+        	padding: {left: 0, right: 0},
+        	tick: {count: 9},
+            label: 
+            {text: 'year',
+            position: 'outer-center',
+        	}
+        },
+        y: {
+        	padding: {top: 0.5, bottom: 0},
+            tick: {count: 5},
+            label: 
+            {text: 'trillion cubic feet per year',
+            position: 'outer-middle',
+            // font:30,
+        	}
+        },
+    grid: {
+        x: {
+            lines: [{value: 2013, text: 'forecast 2013-2040'}]
+        }
+    }
+//    regions: [
+//            {axis: 'x', start: 2000, class: 'regionX'},
+//            {axis: 'x', end: 2012, end: 4, class: 'regionX'},
+//              ]
+//     names: {
+//            data1: 'Bakken',
+//       }
+    },
+});
+
+// To run locally, get local server up, then go to URL--something like:
+// http://localhost:8001/sandbox/C3_test/C3_EIA_AEO2014_shale_gas_areastacked.html
+
+// To run on interwebs, insert iFrame code like this: <iframe src='http://the-frack-lab.github.io/data/sandbox/C3_test/C3_EIA_AEO2014_shale_gas_areastacked_live.html'></iframe>
+
+// Rather than stating all the series to include
+// Can exclude only particular parts of the data set
+// This has to be separate, after the chart generate is closed 
+// I thought it was working before without being inside setTimeout; now only working outside that
+setTimeout(function () {
+	chart.unload({
+	ids: ['Total (mbpd)']
+	});
+}, 100);
+</script>
+
+
+</body>
